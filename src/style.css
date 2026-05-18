@@ -1,12 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
 
 * { margin:0; padding:0; box-sizing:border-box; }
 
-body {
-    background: #0d1117;
-    color: #c9d1d9;
-    font-family: 'Inter', system-ui, sans-serif;
-    overflow-x: hidden;
+body { 
+    background: #0d1117; 
+    color: #c9d1d9; 
+    font-family: 'Inter', system-ui, sans-serif; 
+    overflow-x: hidden; 
+    line-height: 1.6;
 }
 
 #canvas { 
@@ -14,15 +15,51 @@ body {
     top: 0; left: 0; 
     width: 100%; height: 100%; 
     z-index: 1; 
-    opacity: 0.85;
+    opacity: 0.9; 
 }
 
-.container {
-    max-width: 1100px;
+/* Top Navigation */
+.top-nav {
+    position: fixed;
+    top: 0; width: 100%;
+    background: rgba(13, 17, 23, 0.98);
+    border-bottom: 1px solid #21262d;
+    z-index: 100;
+    padding: 14px 0;
+}
+
+.nav-content {
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5rem;
 }
 
+.logo { font-size: 1.4rem; font-weight: bold; color: #58a6ff; }
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    color: #c9d1d9;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.github-btn {
+    background: #238636;
+    color: white;
+    padding: 8px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+/* HERO */
 .hero {
     height: 100vh;
     display: flex;
@@ -31,75 +68,146 @@ body {
     text-align: center;
     position: relative;
     z-index: 2;
+    padding: 0 1rem;
 }
 
-.name {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: clamp(5.5rem, 13vw, 11rem);
-    font-weight: 700;
-    color: #58a6ff;
-    margin-bottom: 0.5rem;
+.hero h1 {
+    font-size: clamp(2.8rem, 8vw, 6rem);
+    color: white;
+    line-height: 1.05;
+    margin-bottom: 1rem;
 }
 
-#role-rotator {
-    font-size: 2.1rem;
-    color: #39d353;
-    margin: 1rem 0 1.5rem;
-    font-weight: 500;
+.hero-sub { 
+    font-size: clamp(1.1rem, 4vw, 1.45rem); 
+    color: #8b949e; 
+    max-width: 720px; 
+    margin: 1.5rem auto 3rem; 
 }
 
-.subtitle {
-    font-size: 1.5rem;
-    max-width: 680px;
-    margin: 0 auto 2.5rem;
-    color: #8b949e;
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 .btn {
     padding: 14px 32px;
-    margin: 0 8px;
-    border: 1px solid #30363d;
-    background: #21262d;
-    color: #c9d1d9;
     border-radius: 6px;
     font-weight: 500;
     cursor: pointer;
-    transition: all 0.3s;
+    font-size: 1rem;
+    min-width: 160px;
 }
 
-.btn.primary {
-    background: #238636;
-    border-color: #238636;
-    color: white;
+.btn.primary { background: #238636; color: white; border: none; }
+.btn.secondary { background: transparent; border: 1px solid #58a6ff; color: #58a6ff; }
+
+/* Sections */
+.section { 
+    padding: 120px 1rem; 
+    position: relative; 
+    z-index: 2; 
 }
 
-.btn:hover {
-    background: #30363d;
-    border-color: #58a6ff;
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
-.section {
-    padding: 140px 0;
-    position: relative;
-    z-index: 2;
+.section-title { 
+    font-size: clamp(2.2rem, 5vw, 3.2rem); 
+    color: #58a6ff; 
+    text-align: center; 
+    margin-bottom: 3rem; 
 }
 
-.section-title {
-    font-size: 3.2rem;
-    color: #58a6ff;
-    margin-bottom: 3rem;
-    text-align: center;
+/* VS Code Window */
+.vscode-window {
+    background: #1e252f;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    overflow: hidden;
+    max-width: 1100px;
+    margin: 0 auto;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.7);
 }
 
-.glass-panel, .project-card {
+.vscode-header {
+    background: #161b22;
+    padding: 12px 16px;
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    border-bottom: 1px solid #21262d;
+}
+
+.tab {
+    background: #1e252f;
+    padding: 8px 18px;
+    border-radius: 6px 6px 0 0;
+    color: #8b949e;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.tab.active { background: #1f6feb; color: white; }
+
+.vscode-body { 
+    padding: 2rem 1.5rem; 
+    min-height: 480px; 
+}
+
+.project-card {
     background: #161b22;
     border: 1px solid #30363d;
-    padding: 2rem;
-    border-radius: 12px;
+    padding: 1.8rem;
+    border-radius: 10px;
+    margin-bottom: 1.8rem;
 }
 
-.projects-grid {
+/* Skills */
+.skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+}
+
+.skill-item {
+    background: #161b22;
+    padding: 1.2rem 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #30363d;
+    text-align: center;
+    font-size: 1.05rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .nav-links { display: none; } /* You can add hamburger later */
+    
+    .hero-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn {
+        width: 100%;
+        max-width: 280px;
+    }
+    
+    .vscode-body {
+        padding: 1.5rem 1rem;
+    }
+    
+    .section {
+        padding: 80px 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2.6rem;
+    }
 }
