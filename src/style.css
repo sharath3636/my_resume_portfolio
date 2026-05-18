@@ -80,7 +80,7 @@ body {
 
 .hero-sub { 
     font-size: clamp(1.1rem, 4vw, 1.45rem); 
-    color: #8b949e; 
+    color: white; 
     max-width: 720px; 
     margin: 1.5rem auto 3rem; 
 }
