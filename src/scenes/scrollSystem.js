@@ -1,34 +1,79 @@
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Lenis from 'lenis';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export function initScrollExperience({ camera, face }) {
-    const lenis = new Lenis({ duration: 1.7, smoothWheel: true });
-    function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
-    requestAnimationFrame(raf);
+export class ScrollSystem {
+  constructor() {
+    this.handleScroll = null;
+    this.init();
+  }
 
-    ScrollTrigger.create({
-        trigger: "#hero",
-        start: "top top",
-        end: "bottom top",
-        scrub: 2,
-        onUpdate: (self) => {
-            camera.position.z = 100 - self.progress * 720;
-            camera.position.x = Math.sin(self.progress * Math.PI) * 45;
-            camera.lookAt(0, 12, -1200);
-        }
-    });
+  destroy() {
+    if (this.handleScroll) {
+      window.removeEventListener('scroll', this.handleScroll);
+    }
+  }
 
-    ScrollTrigger.create({
-        trigger: "#about",
-        start: "top 70%",
-        end: "bottom 30%",
-        scrub: 1.8,
-        onUpdate: (self) => {
-            face.position.z = -120 + self.progress * 350;
-            face.scale.setScalar(1 + self.progress);
-        }
+  init() {
+    this.setupNavbarScroll();
+    this.setupSectionAnimations();
+    this.setupParallax();
+  }
+
+  setupNavbarScroll() {
+    const navbar = document.querySelector('.navbar');
+    let lastScrollY = 0;
+
+    this.handleScroll = () => {
+      const scrollY = window.scrollY;
+
+      if (scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+
+      lastScrollY = scrollY;
+    };
+
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+  setupSectionAnimations() {
+    const sections = document.querySelectorAll('section');
+
+    sections.forEach((section) => {
+      gsap.from(section, {
+        scrollTrigger: {
+          trigger: section,
+          start: 'top 80%',
+          end: 'top 50%',
+          scrub: 1,
+          markers: false,
+        },
+        opacity: 0.5,
+        y: 30,
+        duration: 0.8,
+      });
     });
+  }
+
+  setupParallax() {
+    const parallaxElements = document.querySelectorAll('[data-parallax]');
+
+    parallaxElements.forEach((element) => {
+      gsap.to(element, {
+        scrollTrigger: {
+          trigger: element,
+          start: 'top center',
+          end: 'bottom center',
+          scrub: 1,
+          markers: false,
+        },
+        y: -50,
+        duration: 1,
+      });
+    });
+  }
 }

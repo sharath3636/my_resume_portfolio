@@ -1,86 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sharath K - Full Stack Developer</title>
-    <link rel="stylesheet" href="/src/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-</head>
-<body>
-    <canvas id="canvas"></canvas>
-
-    <!-- GitHub Style Top Navigation -->
-    <nav class="top-nav">
-        <div class="nav-content">
-            <div class="logo">◉ Sharath K</div>
-            <div class="nav-links">
-                <a href="#about">About</a>
-                <a href="#projects">Projects</a>
-                <a href="#skills">Skills</a>
-                <a href="#contact">Contact</a>
-            </div>
-            <a href="https://github.com/sharath3636" target="_blank" class="github-btn">GitHub Profile</a>
-        </div>
-    </nav>
-
-    <!-- HERO -->
-    <section id="hero" class="hero">
-        <div class="hero-content">
-            <h1>The future of building<br>happens together</h1>
-            <p class="hero-sub">Full Stack Developer specializing in React, Flutter, Node.js &amp; Prisma</p>
-            
-            <div class="hero-actions">
-                <button class="btn primary" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">Explore Projects</button>
-                <button class="btn secondary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get In Touch</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="section">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <p>Driven Full Stack Developer with expertise in React.js, React Native, Flutter, Node.js, Prisma ORM, and PostgreSQL. Passionate about building scalable, high-performance web and mobile applications.</p>
-            <p>Currently working as <strong>Software Engineer I</strong> at Techspiration India Pvt. Ltd (June 2024 - Present).</p>
-        </div>
-    </section>
-
-    <!-- PROJECTS - VS CODE STYLE -->
-    <section id="projects" class="section">
-        <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="vscode-window">
-                <div class="vscode-header">
-                    <div class="tabs">
-                        <div class="tab active">DriveGenie</div>
-                        <div class="tab">Techinvest</div>
-                        <div class="tab">CodeMonsters</div>
-                    </div>
-                </div>
-                <div class="vscode-body" id="projects-grid"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section id="skills" class="section">
-        <div class="container">
-            <h2 class="section-title">Core Technologies</h2>
-            <div class="skills-grid" id="skills-grid"></div>
-        </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="section">
-        <div class="container">
-            <h2 class="section-title">Let's Connect</h2>
-            <p><strong>Email:</strong> sharathsakshi.123@gmail.com</p>
-            <p><strong>Phone:</strong> +91 99023 89523</p>
-            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/sharathk5" target="_blank">Sharath K</a></p>
-        </div>
-    </section>
-
-    <script type="module" src="/src/main.js"></script>
-</body>
+<!doctype html>
+<html class="dark" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Sharath K. Full Stack SDE-2 portfolio" />
+    <title>Sharath K. // Full Stack SDE-2 Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              surface: '#0d141e', 'surface-low': '#151c26', 'surface-lowest': '#070e19', 'surface-high': '#232a35',
+              primary: '#ffd492', 'primary-container': '#f6b332', secondary: '#ffb3b1', 'secondary-container': '#ad0224',
+              tertiary: '#b2e1ff', 'tertiary-container': '#63caff', 'on-surface': '#dce3f2', 'on-surface-variant': '#d5c4ae',
+              outline: '#9d8f7a', 'outline-variant': '#504534'
+            },
+            fontFamily: { headline: ['Space Grotesk', 'sans-serif'], code: ['JetBrains Mono', 'monospace'], body: ['Geist', 'sans-serif'] }
+          }
+        }
+      };
+    </script>
+  </head>
+  <body class="bg-surface font-body text-on-surface antialiased selection:bg-primary-container selection:text-surface relative">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>

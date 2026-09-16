@@ -1,9 +1,20 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  base: './',
+  base: '/',
+  server: {
+    port: 5174,
+    host: true,
+    open: false
+  },
   build: {
     outDir: 'dist',
-    assetsDir: 'assets'
+    assetsDir: 'assets',
+    minify: 'terser'
+  },
+  resolve: {
+    alias: {
+      '@': '/src'
+    }
   }
 });
