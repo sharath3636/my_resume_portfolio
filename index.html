@@ -1,32 +1,47 @@
-<!doctype html>
+<!DOCTYPE html>
 <html class="dark" lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Sharath K. Full Stack SDE-2 portfolio" />
-    <title>Sharath K. // Full Stack SDE-2 Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <script>
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            colors: {
-              surface: '#0d141e', 'surface-low': '#151c26', 'surface-lowest': '#070e19', 'surface-high': '#232a35',
-              primary: '#ffd492', 'primary-container': '#f6b332', secondary: '#ffb3b1', 'secondary-container': '#ad0224',
-              tertiary: '#b2e1ff', 'tertiary-container': '#63caff', 'on-surface': '#dce3f2', 'on-surface-variant': '#d5c4ae',
-              outline: '#9d8f7a', 'outline-variant': '#504534'
-            },
-            fontFamily: { headline: ['Space Grotesk', 'sans-serif'], code: ['JetBrains Mono', 'monospace'], body: ['Geist', 'sans-serif'] }
+<head>
+  <meta charset="UTF-8" />
+  <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport" />
+  <title>Sharath K - Full Stack SDE-2 Portfolio</title>
+  <link rel="icon" type="image/png" href="/sharath_tech_jolly_roger_logo.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
+  <!-- Tailwind CDN (JIT in-browser) - keeps the exact same utility classes used in the original design -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            surface: "#0d141e",
+            "surface-low": "#151c26",
+            "surface-lowest": "#070e19",
+            "surface-high": "#232a35",
+            primary: "#ffd492",
+            "primary-container": "#f6b332",
+            secondary: "#ffb3b1",
+            "secondary-container": "#ad0224",
+            tertiary: "#b2e1ff",
+            "tertiary-container": "#63caff",
+            "on-surface": "#dce3f2",
+            "on-surface-variant": "#d5c4ae",
+            outline: "#9d8f7a",
+            "outline-variant": "#504534"
+          },
+          fontFamily: {
+            headline: ["Space Grotesk", "sans-serif"],
+            code: ["JetBrains Mono", "monospace"],
+            body: ["Geist", "sans-serif"]
           }
         }
-      };
-    </script>
-  </head>
-  <body class="bg-surface font-body text-on-surface antialiased selection:bg-primary-container selection:text-surface relative">
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+      }
+    };
+  </script>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased selection:bg-primary-container selection:text-surface relative">
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
 </html>
